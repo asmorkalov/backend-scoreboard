@@ -17,6 +17,12 @@
             "results_dir": "./results/jaxonnxruntime/stable",
             "core_packages": ["onnx", "jaxonnxruntime"],
             "dockerfile_link": "runtimes/jaxonnxruntime/stable/Dockerfile"
+        },
+        "opencv_onnx_proxy": {
+            "name": "OpenCV 4.8.0 DNN Default",
+            "results_dir": "./results/opencv-4.8.0-default/stable",
+            "core_packages": ["opencv-onnx-conformance-proxy", "opencv-python-headless"],
+            "dockerfile_link": "runtimes/opencv4-default/stable/Dockerfile"
         }
     },
     "development": {
@@ -37,6 +43,12 @@
             "results_dir": "./results/jaxonnxruntime/development",
             "core_packages": ["onnx", "jaxonnxruntime"],
             "dockerfile_link": "runtimes/jaxonnxruntime/development/Dockerfile"
+        },
+        "opencv_onnx_proxy": {
+            "name": "OpenCV 4.x branch DNN Default",
+            "results_dir": "./results/opencv-4.x-default/development",
+            "core_packages": ["opencv-onnx-conformance-proxy"],
+            "dockerfile_link": "runtimes/opencv4-default/development/Dockerfile"
         }
     },
     "deploy_paths": {
