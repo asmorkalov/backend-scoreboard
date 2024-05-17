@@ -45,11 +45,12 @@
             "dockerfile_link": "runtimes/jaxonnxruntime/development/Dockerfile"
         },
         "opencv_onnx_proxy": {
-            "name": "OpenCV 4.x branch DNN Default",
-            "results_dir": "./results/opencv-4.x-default/development",
+            "name": "OpenCV 5.x branch DNN Default",
+            "results_dir": "./results/opencv-5.x-default/development",
             "core_packages": ["opencv-onnx-conformance-proxy"],
-            "dockerfile_link": "runtimes/opencv4-default/development/Dockerfile"
+            "dockerfile_link": "runtimes/opencv5-default/development/Dockerfile"
         }
+
     },
     "deploy_paths": {
         "index": "./docs",

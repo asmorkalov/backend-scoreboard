@@ -15,7 +15,14 @@ COPY ./setup /root/setup
 # Install test report dependencies
 RUN pip3 install --no-cache-dir -r /root/setup/requirements_report.txt
 
-RUN pip3 install --no-cache-dir opencv-python-headless==4.9.0.80
+RUN mkdir /opencv && cd /opencv && \
+    git clone --depth=1 -b 5.x https://github.com/opencv/opencv.git  && \
+    mkdir build && cd build &&  \
+    cmake -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF ../opencv &&  \
+    make -j4
+
+# add self-built instance of OpenCV to python environment
+ENV PYTHONPATH=/opencv/build/python_loader:$PYTHONPATH
 
 COPY ./opencv-onnx-conformance-proxy /root/opencv-onnx-conformance-proxy
 RUN cd /root/opencv-onnx-conformance-proxy && pip3 install . && cd -
